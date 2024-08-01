@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+</head>
+
+<body>
+    <script>
+        let userNum = Number(prompt(`Введите число`));
+        let hundred = Math.floor((userNum / 100) % 10);
+        let ten = Math.floor(userNum / 10) % 10;
+        let one = Math.floor(userNum % 10);
+        alert(`В числе ${userNum} количество сотен: ${hundred}, десятков: ${ten}, единиц: ${one}`)
+    </script>
+</body>
+
+</html>

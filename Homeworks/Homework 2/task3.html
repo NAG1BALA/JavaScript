@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+</head>
+
+<body>
+    <script>
+        const day = Number(prompt('Введите число от 1 до 31'));
+        if (day < 1 || day > 31) {
+            alert(`Введенное число не удовлетворяет условию`);
+        } else if (day >= 1 && day <= 10) {
+            alert(`Данное число попадает в 1 декаду месяца`);
+        } else if (day >= 11 && day <= 20) {
+            alert(`Данное число попадает в 2 декаду месяца`);
+        } else {
+            alert(`Данное число попадает в 3 декаду месяца`);
+        }
+
+    </script>
+</body>
+
+</html>
