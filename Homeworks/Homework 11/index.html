@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<body lang="en">
+
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+            rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Homework 11</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+</body>
+<div class="site">
+    <div class="top">
+        <div class="header">
+            <div class="logo">
+                <img src="img/logo.png" alt="logo">
+            </div>
+            <div class="magnifier">
+                <img src="img/magnifier.svg" alt="magnifier">
+            </div>
+            <div class="other">
+                <img src="img/other.svg" alt="other">
+            </div>
+            <div class="profile">
+                <img src="img/profile.svg" alt="profile">
+            </div>
+            <div class="basket">
+                <img src="img/basket.svg" alt="basket">
+            </div>
+        </div>
+        <div class="top__main">
+            <div class="main__image">
+                <img src="img/main.png" alt="main_image">
+            </div>
+            <div class="main__zone">
+                <div class="rectangle"></div>
+                <div class="main__title">
+                    <h1><span class="main__span">THE BRAND</span><br>
+                        OF LUXERIOUS <span class="main__span2">FASHION</span></h1>
+                </div>
+            </div>
+        </div>
+        <div class="offer center">
+            <div class="sale__item">
+                <img src="img/women.png" alt="women">
+            </div>
+            <div class="sale__item">
+                <img src="img/men.png" alt="men">
+            </div>
+            <div class="sale__item">
+                <img src="img/kids.png" alt="kids">
+            </div>
+            <div class="big__sale__item">
+                <img src="img/accesories.png" alt="accesories">
+            </div>
+        </div>
+    </div>
+    <div class="main center">
+        <div class="description">
+            <h2 class="desc__title">Fetured Items</h2>
+            <p class="desc__text">Shop for items based on what we featured in this week</p>
+        </div>
+        <div class="products"></div>
+        <div class="bottom__button">
+            <form action="#">
+                <button class="browse__button">Browse All Product</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<script src="data.js"></script>
+<script>
+    const data = JSON.parse(dataProducts)
+    const productsEl = document.querySelector('.products');
+
+    data.forEach(element => {
+        const productEl = document.createElement('div');
+        productEl.classList.add('product');
+
+        const itemImg = document.createElement('img');
+        itemImg.src = element.url;
+
+        const productHeading = document.createElement('h3');
+        productHeading.classList.add('name');
+        productHeading.textContent = element.name;
+
+        const productDesc = document.createElement('p');
+        productDesc.classList.add('desc');
+        productDesc.textContent = element.desc;
+
+        const productPrice = document.createElement('p');
+        productPrice.classList.add('price');
+
+        const priceColor = document.createElement('span');
+        priceColor.classList.add('price__color');
+        priceColor.textContent = `$${element.price}`;
+
+        productsEl.appendChild(productEl);
+        productEl.appendChild(itemImg);
+        productEl.appendChild(productHeading);
+        productEl.appendChild(productDesc);
+        productEl.appendChild(productPrice);
+        productPrice.appendChild(priceColor);
+    });
+</script>
+</body>
+
+</html>
