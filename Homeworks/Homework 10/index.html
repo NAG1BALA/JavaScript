@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 10</title>
+    <style>
+        .desc1 {
+            color: blue
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content"></div>
+
+    <script src="data.js"></script>
+    <script>
+        const catsData = JSON.parse(data)
+
+        const contentEl = document.querySelector('.content');
+
+        catsData.forEach(catsData => {
+            const idEl = document.createElement('h1');
+            var elem1 = document.createElement("label");
+            elem1.textContent = " - уникальный идентификатор"
+            elem1.classList.add('desc1')
+            idEl.textContent = catsData.id;
+
+            const imgEl = document.createElement('img');
+            imgEl.setAttribute('alt', 'картинка');
+            imgEl.src = catsData.url;
+
+            const widthEl = document.createElement('p');
+            var elem2 = document.createElement("label");
+            elem2.textContent = " - ширина изображения"
+            widthEl.textContent = catsData.width;
+
+            const heightEl = document.createElement('p');
+            var elem3 = document.createElement("label");
+            elem3.textContent = " - высота изображения"
+            heightEl.textContent = catsData.height;
+
+            contentEl.appendChild(idEl);
+            idEl.appendChild(elem1);
+            contentEl.appendChild(imgEl);
+            contentEl.appendChild(widthEl);
+            widthEl.appendChild(elem2);
+            contentEl.appendChild(heightEl);
+            heightEl.appendChild(elem3);
+
+        });
+    </script>
+</body>
+
+</html>
